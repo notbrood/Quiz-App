@@ -1,7 +1,9 @@
 package com.broood.quiz
 
 object Constants {
-    var correctAnswers = 0
+    const val correctAnswers = "0"
+    const val USERNAME = "user_name"
+
     fun getQuestions():
             ArrayList<Questions>{
         val questionslist = ArrayList<Questions>()

@@ -28,6 +28,7 @@ class QuizQuestions : AppCompatActivity() {
     private val questionsList = Constants.getQuestions()
     private var question: Questions = questionsList[currentPosition]
     private val options: List<TextView?> = listOf(op1, op2, op3, op4) as List<TextView?>
+    private var temp = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +40,10 @@ class QuizQuestions : AppCompatActivity() {
                 submit()
             }
             else{
-                Toast.makeText(this, "score is:  ${Constants.correctAnswers}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "temp = $temp", Toast.LENGTH_SHORT).show()
+                var a: Intent = Intent(this, Result::class.java)
+                a.putExtra(Constants.correctAnswers, temp.toString())
+                startActivity(a)
             }
         }
     }
@@ -61,9 +65,9 @@ class QuizQuestions : AppCompatActivity() {
 
     @SuppressLint("ResourceAsColor")
     fun submit(){
-            if (selectedButton!! == options[question.cO]) {
-                currentPosition += 1
-                Constants.correctAnswers += 1
+            if (selectedButton == options[question.cO]) {
+                currentPosition++
+                temp++
                 selectedButton?.setBackgroundResource(R.drawable.default_option_border_bg)
                 selectedButton?.setTextColor(R.color.dfcolor)
                 truHaiKya = false
@@ -77,8 +81,8 @@ class QuizQuestions : AppCompatActivity() {
     }
     @SuppressLint("ResourceAsColor")
     fun submitButDont(){
-        if (selectedButton!! == options[question.cO]) {
-            Constants.correctAnswers += 1
+        if (selectedButton == options[question.cO]) {
+            temp++
             truHaiKya = false
             val intent = Intent(this, Result::class.java)
             startActivity(intent)
