@@ -5,4 +5,4 @@
 
 * [Kotlin](https://kotlinlang.org/)
 * [Coolors](https://coolors.co) 
-* [View Binding](https://developer.android.com/topic/libraries/view-binding)
+* [Android Studio](https://developer.android.com/docs)
