@@ -24,7 +24,7 @@ object Constants {
         )
         questionslist.add(q4)
         val q5 = Questions(
-            5, "Identify the correct extension of the user-defined header file in C++:", ".cpp", ".hg", ".h", "hf", 1
+            5, "Identify the correct extension of the user-defined header file in C++:", ".cpp", ".hg", ".h", "hf", 2
         )
         questionslist.add(q5)
         return questionslist
