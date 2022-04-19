@@ -1,5 +1,5 @@
 # Quiz App
- a basic quiz app made to learn the basics of Kotlin/Android Studio
+ A basic quiz app made to learn the basics of Kotlin/Android Studio
 
 ## Libs and Techniques
 
